@@ -25,27 +25,31 @@ import ShopAll from "./Components/ShopALL/ShopAll.jsx";
 import ReviewForm from "./Components/Reviews/ReviewForm.jsx";
 import WishlistCard from "./Components/Wishlist/WishlistCard.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
+import NotFound from "./Components/ErrorPage/NotFound.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="/" element={<Home />} />
-      <Route path="/Login" element={<Login />} />
-      <Route path="/Wishlist" element={<Wishlist />} />
-      <Route path="/Navbar" element={<Navbar />} />
-      <Route path="/CrueltyFree" element={<CrueltyFree />} />
-      <Route path="/MostLoved" element={<MostLoved />} />
-      <Route path="/Card" element={<Card />} />
-      <Route path="/Featured" element={<Featured />} />
-      <Route path="/Gift" element={<Gift />} />
-      <Route path="/Button" element={<Button />} />
-      <Route path="/ProductDetails" element={<ProductDetails />} />
-      <Route path="/HeroSection" element={<HeroSection />} />
-      <Route path="/Reviews" element={<Reviews />} />
-      <Route path="/ShopAll" element={<ShopAll />} />
-      <Route path="/ReviewForm" element={<ReviewForm />} />
-      <Route path="/Cart" element={<Cart />} />
-      <Route path="/WishlistCard" element={<WishlistCard />} />
+      <Route path="Login" element={<Login />} />
+      <Route path="Wishlist" element={<Wishlist />} />
+      <Route path="Navbar" element={<Navbar />} />
+      <Route path="CrueltyFree" element={<CrueltyFree />} />
+      <Route path="MostLoved" element={<MostLoved />} />
+      <Route path="Card" element={<Card />} />
+      <Route path="Featured" element={<Featured />} />
+      <Route path="Gift" element={<Gift />} />
+      <Route path="Button" element={<Button />} />
+      <Route path="ProductDetails" element={<ProductDetails />} />
+      <Route path="HeroSection" element={<HeroSection />} />
+      <Route path="Reviews" element={<Reviews />} />
+      <Route path="ShopAll" element={<ShopAll />} />
+      <Route path="ReviewForm" element={<ReviewForm />} />
+      <Route path="Cart" element={<Cart />} />
+      <Route path="WishlistCard" element={<WishlistCard />} />
+      <Route path="WishlistCard" element={<WishlistCard />} />
+      <Route path="WishlistCard" element={<WishlistCard />} />
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );

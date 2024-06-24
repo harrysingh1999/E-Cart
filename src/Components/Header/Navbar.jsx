@@ -15,7 +15,7 @@ import { FaInstagram } from "react-icons/fa";
 import { TbBrandYoutubeFilled } from "react-icons/tb";
 import { useState } from "react";
 import Wishlist from "../Wishlist/Wishlist";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Sheet, SheetTrigger, SheetContent } from "../ui/sheet";
 import Cart from "../Cart/Cart";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
@@ -55,7 +55,7 @@ export const Navbar = () => {
           <div className="flex justify-center items-center col-span-4">
             <p className="flex items-center w-max">
               <span className="w-max text-xl md:text-3xl lg:text-4xl font-semibold uppercase tracking-widest">
-                <Link to="/">E-commerce</Link>
+                <NavLink to="/">E-commerce</NavLink>
               </span>
               <span>
                 <sub>&#174;</sub>
@@ -63,9 +63,18 @@ export const Navbar = () => {
             </p>
           </div>
           <div className="flex items-center justify-end col-span-4 cursor-pointer">
-            <Link to="/Login">
+            <NavLink
+              to="/Login"
+              className={({ isActive }) =>
+                `${
+                  isActive
+                    ? "text-green-500 border-b border-green-500"
+                    : "text-inherit"
+                }`
+              }
+            >
               <LuUser2 className="mx-1 hidden md:block md:mx-3 text-2xl" />
-            </Link>
+            </NavLink>
             <IoSearchSharp className="mx-1 md:mx-3 text-2xl" />
 
             <Dialog>
@@ -100,7 +109,18 @@ export const Navbar = () => {
             <div className="h-[75vh] overflow-y-scroll lg:overflow-y-hidden overflow-x-hidden ms-4 lg:h-5 cursor-pointer">
               <ul className="px-2 lg:h-80 lg:px-0 lg:flex uppercase text-sm lg:justify-evenly">
                 <li className="py-4 lg:py-0 my-1 lg:my-0 border-b lg:border-none border-solid border-gray-400">
-                  <NavLink to="/ShopAll">shop all</NavLink>
+                  <NavLink
+                    to="/ShopAll"
+                    className={({ isActive }) =>
+                      `${
+                        isActive
+                          ? "text-green-500 border-b border-green-500"
+                          : "text-inherit"
+                      }`
+                    }
+                  >
+                    shop all
+                  </NavLink>
                 </li>
                 <li className="py-4 lg:py-0 my-1 lg:my-0 border-b lg:border-none border-solid border-gray-400">
                   <a href="#"></a>shop by skin condition{" "}
@@ -131,14 +151,14 @@ export const Navbar = () => {
                 </li>
               </ul>
               <div className="text-sm ms-2 border-t border-black/20 py-6 flex flex-col">
-                <Link to="/Login">
+                <NavLink to="/Login">
                   <span
                     onClick={() => setMenu("hidden")}
                     className="text-black my-2 border border-black/30 py-1 px-4 rounded-md"
                   >
                     ACCOUNT
                   </span>
-                </Link>
+                </NavLink>
 
                 <Dialog>
                   <DialogTrigger asChild>
